@@ -1,0 +1,364 @@
+body {
+    width: 100%;
+    margin: 0;
+    font-family: sans-serif;
+}
+.allcontent {
+    margin: 0 auto;
+}
+.header {
+    display: flex;
+    background-color: #568735;
+    justify-content: flex-end;
+    padding: 5px;
+    color: #E1EADB;
+    align-items: center;
+}
+.header div {
+    padding: 5px;
+}
+.dropdown {
+    margin-right: 4%;
+    position: relative;
+    display: inline-block;
+}
+.dropdownbutton {
+    margin-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-right: 40px;
+    border-radius: 4px;
+    border: 0.5px solid black;
+    width: 130px
+}
+.dropdownMenu {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    border-radius: 7px;
+}
+.dropdownMenu div {
+    display: block;
+    color: black;
+    padding: 12px 16px;
+}
+.dropdown:hover .dropdownMenu {display: block;}
+
+.topContent {
+    display: flex;
+    padding: 25px;
+    color: #9C9C9C;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.topItems {
+    display: flex;
+}
+.logo {
+    width: 120px;
+    padding-left: 7%;
+    padding-right: 2%;
+}
+.topContent div {
+    padding: 7px;
+}
+.topContent div:last-of-type {
+    margin-left: auto;
+}
+#search{
+    padding: 6px;
+    border-radius: 3px;
+    border: 0.5px solid black;
+}
+#searchButton {
+    background-color: #568735;
+    padding: 6px;
+    color: white;
+    border: 1px solid #568735;
+    border-radius: 4px;
+    width:60px
+}
+.mainimage {
+    background-image: url("./Images/Mainphoto.png");
+    min-height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    /* text-align: center;
+    color: white; */
+}
+
+@media only screen and (max-device-width: 1366px) {
+    .mainimage {
+        background-attachment: scroll;
+    }
+}
+/* .centerText {
+    position: absolute;
+    top: 39.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    white-space: nowrap;
+    
+}
+.centerButton {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #5D8635;
+    border: #5D8635;
+    color: white;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-size: 15px;
+} */
+.smallimages {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.smallimages img {
+    width: 260px;
+    margin: 10px;
+}
+.smallphotos_1 {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.companydiv {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 21px;
+}
+.smallphotos_2 {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.productsdiv {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 21px;
+}
+.smallphotos_3 {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+.contactdiv {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 21px;
+}
+.numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.numbersBox {
+    display: flex;
+}
+.numbers i {
+    color: #568735;
+    max-width: 100%;
+    margin: 20px;
+}
+.counter {
+    font-size: 40px;  
+}
+.editbox {
+    display: grid;
+    padding: 20px;
+    grid-column-gap: 30px;
+    position: static;
+    width: 100px;
+}
+.news {
+    background-color: #ECEEEF;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+}
+.newsHeader {
+    font-size: 35px;
+    margin: 10px;
+}
+.contentBox {
+    margin: 30px;
+}
+#content {
+    display: flex;
+    justify-content: space-evenly;
+    text-align: start;
+    flex-wrap: wrap;
+}
+.newsBox {
+    background-color: white;
+    padding:20px;
+    border: 1px solid white;
+    border-radius: 4px;
+    height: 100px;
+    width: 300px;
+}
+#content div {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+#contentTitle {
+    padding-top: 10px;
+    flex:1;
+}
+#contentTime{
+    padding-bottom: 7px;
+    font-size: 10px;
+}
+
+.references {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border-bottom: 1px solid #D0D0D0;
+}
+.references .text {
+    text-align: center;
+    font-size: 30px;
+    padding: 10px;
+}
+.references .contentBox {
+    display: flex;
+    margin: 30px;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+.referenceText {
+    text-align: center;
+}
+.referenceContent {
+    width: 240px;
+    border: 1px solid #D0D0D0;
+    border-radius: 4px;
+}
+.referenceText h2 {
+    font-size: 20px;
+    padding: 20px;
+}
+.referenceText div {
+    color: #4C4E4F;
+    padding-bottom: 40px;
+}
+.contentBox img {
+    width: 100%;
+}
+.imageContainer {
+    height: 160px;
+    border-bottom: 1px solid #D0D0D0;
+    display: table-cell;
+    vertical-align: middle;
+}
+.newsletter {
+    text-align: center;
+    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.newsletter h2 {
+    font-size: 30px;
+    padding: 10px;
+}
+.newsletter div {
+    width: 25%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.newsletter input {
+    height: 30px;
+    width: 250px;
+    border: 1px solid #D0D0D0;
+    border-radius: 4px;
+    padding: 5px;
+    padding-left: 10px;
+    margin: 20px;
+    margin-right: 2px;
+    font-size: 15px;
+}
+.newsletter button {
+    height: 40px;
+    width: 90px;
+    border: 1px solid #568735;
+    border-radius: 4px;
+    background-color: #568735;
+    color: white;
+}
+.footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 3%;
+    flex-wrap: wrap;
+}
+.leftSide {
+    padding: 2%;
+}
+.lianatech {
+    font-size: 20px;
+    padding-bottom: 6%;
+}
+.contactinfo {
+    font-size: 15px;
+}
+.leftSide button {
+    background-color: #568735;
+    color: white;
+    border: 1px solid #568735;
+    border-radius: 4px;
+    width: 90px;
+    padding: 5px;
+    margin-left: 40px;
+}
+.contactbutton {
+    display: flex;
+}
+.rightSide {
+    display: flex;
+    flex-direction: column;
+}
+.rightSideItems {
+    display: flex;
+}
+.rightSide div {
+    padding: 10px;
+    flex-wrap: wrap;
+}
+.someicons {
+    display: flex;
+    justify-content: end;
+}
+.someicons i {
+    padding: 10px;
+    background-color: #568735;
+    border-radius: 50%;
+    margin: 5px;
+    margin-top: 20px;
+    width: 15px;
+    text-align: center;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="jquery-3.6.0.min.js"></script>
+        <script>
+             $(document).ready(function() {
+                var xhr = new window.XMLHttpRequest();
+                // const feed = 'https://rss.art19.com/apology-line';
+                const feed = 'https://www.lianatech.com/resources/blog.rss';
+
+                $.ajax(feed, {
+                    accepts:{
+                        xml:"application/rss+xml"
+                    },
+                    dataType: "xml",
+                    success:function(data) {
+                        $(data).find("item").each(function(i, value) {
+                            const el = $(this);
+                            if (i > 2){
+                                return false;
+                            }else{
+                            var title = el.find("title").text();
+                            var pubDate = el.find("pubDate").text()
+                            console.log(title)
+                            //console.log(items)
+                            $('#content').append('<div class="newsBox">' + '<div id="contentTime">' + pubDate + '</div>'+'<div id="contentTitle">' + title + '</div>' + '</div>')
+                            // for (let i = 0; i < item s.length; i++) {
+                            //     $('#content').append('<div id="contentTitle">'+items[i]+'</div>')    
+                            // }
+                            
+                            // $('#contentTitle').append(el.find("title").text())
+                            // console.log("-------------");
+                            // console.log("title      : " + el.find("title").text());
+                            }
+                        });
+                    }
+                });
+            });  
+        </script>
+    </head>
+    <body>
+        <div class="allcontent">
+            <div class="header">
+                <div>News</div>
+                <div>Intranet</div>
+                <div class="dropdown">
+                    <button class="dropdownbutton">In English ▼</button>
+                    <div class="dropdownMenu">
+                        <div>In Finnish</div>
+                    </div>
+                </div>
+            </div>
+            <div class="topContent">
+                <img src="./Images/lianatech_logo.svg" alt="Logo" width="50" height="50" class="logo">
+                <div class="topItems">
+                    <div>Company</div>
+                    <div>Products</div>
+                    <div>Contact Us</div>
+                </div>
+                <div>
+                    <input type="text" id="search" name="Search" placeholder="Search">
+                    <button id="searchButton">Search</button>
+                </div>
+            </div>
+                <div class="mainContent">
+                    <div class="mainimage">
+                    <!-- <div class="centerText">Software fueling digital marketing</div>
+                    <button class="centerButton">Learn more</button> -->
+                </div>
+                <div class="smallimages">
+                    <div class="smallphotos_1">
+                        <img src="Images/Companypic.PNG">
+                        <!-- <div class="companydiv">Company</div> -->
+                    </div>
+                    <div class="smallphotos_2">
+                        <img src="Images/Productspic.PNG">
+                        <!-- <div class="productsdiv">Products</div> -->
+                    </div>
+                    <div class="smallphotos_3">
+                        <img src="Images/Contactpic.PNG">
+                        <!-- <div class="contactdiv">Contact us</div> -->
+                    </div>
+                </div>
+                <div class="numbers">
+                    <div class="numbersBox">
+                    <i class="fa fa-briefcase fa-3x" aria-hidden="true"></i>
+                    <div class="editbox">
+                        <div class="counter" data-target="3000">0</div>
+                        <div class="counterText">Clients</div>
+                    </div></div>
+                    <div class="numbersBox">
+                    <i class="fa fa-smile-o fa-3x" aria-hidden="true"></i>
+                    <div class="editbox">
+                        <div class="counter" data-target="180">0</div>
+                        <div class="counterText">Employees</div>
+                    </div></div>
+                    <div class="numbersBox">
+                    <i class="fa fa-globe fa-3x" aria-hidden="true"></i>
+                    <div class="editbox">
+                        <div class="counter" data-target="10000">0</div>
+                        <div class="counterText">Daily users</div>
+                    </div></div>
+                </div>
+                <div class="news">
+                    <div class="newsHeader">Latest news</div>
+                    <div class="contentBox">
+                        <div id="content"></div>
+                    </div>
+                    
+                </div>
+                <div class="references">
+                    <div class="text">References</div>
+                    <div class="contentBox">
+                        <div class="referenceContent">
+                            <div class="imageContainer">
+                                <img src="Images/BoschlogoCropped.png">
+                            </div>
+                            <div class="referenceText">
+                                <h2>Robert Bosch</h2>
+                                <div>Bosch is a multinational engineering and electronics company.</div>
+                            </div>
+                        </div>
+                        <div class="referenceContent">
+                            <div class="imageContainer">
+                                <img src="Images/BodylogoCropped.png">
+                            </div>
+                            <div class="referenceText">
+                                <h2>The Body Shop</h2>
+                                <div>The Body Shop is a global beauty brand and it has more than 3,000 stores in more than 60 countries.</div>
+                            </div>
+                        </div>
+                        <div class="referenceContent">
+                            <div class="imageContainer">
+                                <img src="Images/LaplandlogoCropped.png">
+                            </div>
+                            <div class="referenceText">
+                                <h2>Lapland Hotels</h2>
+                                <div>Lapland Hotels is the largest and the most diverse hotel chain in Lapland.</div>
+                            </div>
+                        </div>
+                        <div class="referenceContent">
+                            <div class="imageContainer">
+                                <img src="Images/IkealogoCropped.png">
+                            </div>
+                            <div class="referenceText">
+                                <h2>IKEA </h2>
+                                <div>IKEA is a multinational furniture store.</div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="newsletter">
+                    <h2>Subscribe to our newsletter</h2>
+                    <div>Follow our story and get the latest promotional news about our products and events.</div>
+                    <input type="text" placeholder="Your email address">
+                    <button>Subscribe</button>
+                </div>
+                <div class="footer">
+                    <div class="leftSide">
+                        <div class="lianatech">Liana Technologies</div>
+                        <div>Sales and inquiries</div>
+                        <div class="contactbutton">
+                            <div class="contactinfo">
+                                <div>Email: sales@lianatech.com</div>
+                                <div>Phone: +358 10 387 7053</div>
+                            </div>
+                            <button>Contact us</button> 
+                        </div>
+                    </div>
+                    <div class="rightSide">
+                        <div class="rightSideItems">
+                            <div>Company</div>
+                            <div>Products</div>
+                            <div>Contact us</div>
+                            <div>News</div>
+                            <div>Intranet</div>
+                        </div>
+                        <div class="someicons">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
